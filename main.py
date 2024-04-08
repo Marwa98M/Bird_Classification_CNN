@@ -14,7 +14,7 @@ def main():
     train_dir = os.path.join('/data', 'train')
     test_dir = os.path.join('/data', 'test')
     print(test_dir)
-    # model_path = 'models/bird_classification_model.h5'
+    model_path = 'models/bird_classification_model.h5'
 
     # Prepare dataframes for the training and validation datasets
     train_df, test_df = prepare_dataframes(train_dir)
@@ -29,8 +29,8 @@ def main():
     train(model, train_data, test_data, device=device)
 
     # # Save the trained model
-    # model.save(model_path)
-    # print(f"Model saved at {model_path}")
+    model.save(model_path)
+    print(f"Model saved at {model_path}")
 
     # # Evaluate the model on the test set
     # evaluate(model_path, test_dir)
